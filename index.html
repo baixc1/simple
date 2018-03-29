@@ -5,26 +5,23 @@
         <title>Jquery中.attr和.data的区别</title>
     </head>
     <body>
-        <p id="app" data-foo="hello"></p>
+        <ul></ul>
     </body>
     <script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    
     <script type="text/javascript">
-        var getAttr1 = $('#app').attr('data-foo');
-        var getData1 = $('#app').data('foo');
-        console.log('getAttr1: ' + getAttr1); //hello
-        console.log('getData1: ' + getData1); //hello
-
-        $('#app').attr('data-foo', 'world'); //$.attr 设置DOM元素属性值
-        var getAttr2 = $('#app').attr('data-foo');
-        var getData2 = $('#app').data('foo');
-        console.log('getAttr2: ' + getAttr2); //world
-        console.log('getData2: ' + getData2); //*** hello ***
-
-        $('#app').data('foo', 'WORLD'); //$.data 设置DOM node属性值
-        var getAttr3 = $('#app').attr('data-foo');
-        var getData3 = $('#app').data('foo');
-        console.log('getAttr3: ' + getAttr3); //world
-        console.log('getData3: ' + getData3); //*** WORLD ***
-
+    	var textArr = [{text:'获取cookie',url:'getCookie'}],ulHtml='';
+    	for(var i=0;i<textArr.length;i++){
+    		ulHtml += '<li>' + textArr[i].text + '</li>';
+    	}
+    	$('ul').append(ulHtml);
+    	$('ul').on('click',function(e){
+    		var index = $(e.target).index(),
+    			url = textArr[index].url;	//需引入脚本
+    		var script = document.createElement('script');
+    		script.src = url+'.js';
+    		document.body.appendChild(script);
+    		
+    	})
     </script>
 </html>
