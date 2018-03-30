@@ -1,0 +1,26 @@
+1、抽象类
+	无具体实现方法（<java8），不能创建对象
+	一个类只能继承一个抽象类
+	对类抽象
+	模板式设计
+	
+2、接口
+	成员变量是public abstract final类型，不能含静态代码块和静态方法，一个类可以实现多个接口，所有方法都是抽象的
+	
+	对行为抽象
+	行为规范，辐射式设计
+区别
+1、语法2、设计（飞机和飞鸟）（门和警报）
+
+interface Alarm(){
+	void alarm();
+}
+abstract class Door(){
+	void open();
+	void close();
+}
+class AlarmDoor extends Door implements Alarm{
+	void alarm(){}
+	void open(){}
+	void close(){}
+}
