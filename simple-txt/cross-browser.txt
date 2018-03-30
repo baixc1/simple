@@ -1,0 +1,11 @@
+web流  worklight(cordova，phoneGap，jqm)、react active
+浏览器兼容：
+css hack: 内部属性(*、+、-、_、#)、选择器前缀
+HTML条件注释(<!--[if IE]><![endif]-->)
+js识别	
+	addEventListener(event,fn,false);    attachEvent('on'+event,fn)（兼容ie7-8）;   
+	e = e || window.event(兼容火狐和ie6-8);
+	scrollTop = document.documentElement.scrollTop||document.body.scrollTop; （兼容Chrome）
+	event.preventDefault();  event.returnValue = false;		兼容IE6-8
+	event.stopPropagation  event.cancleBubble = true;  		兼容IE6-8
+	getElementsByClassName 非IE
