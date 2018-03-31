@@ -1,0 +1,19 @@
+1、基于(TCP/IP)、应用层、80端口
+2、版本、状态码、描述   Content-Type Content-Encoding	
+	http/1.0
+	缺点：请一连一断   成本高（三次握手，发送慢）   非标准解决：Connection: keep-alive   
+	
+	http/1.1 
+	引入persistent connection(TCP默认打开)  Connection: close 手动关闭     6个
+	管道机制（同时请求）
+	Content-length(缓存) or  分块传输编码(流)(chunked transfer encoding) Transfer-Encoding: chunked
+	Host(域名)
+	缺点：队头阻塞    	解决：减少请求，多开持久连接（前端优化）
+	
+	http/2 
+	二进制协议(帧)，利于解析
+	多工(避免队头阻塞)
+	数据流，可以取消某一次请求，优先级
+	头信息压缩
+	服务器推送
+	
