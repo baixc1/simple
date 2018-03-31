@@ -1,0 +1,22 @@
+系统
+set 查询环境变量
+
+npm
+npm root -g 查询全局模块的默认安装位置
+
+node
+global.module.paths 查询全局模块的默认搜索路径
+
+mysql
+mysql -u root -p 	连接数据库
+show databases; 	显示数据库列表
+create database 库名	;
+drop database 库名;
+
+
+use mysql; 	使用库名
+show tables;	显示表
+describe 表名; 	显示表结构
+create table 表名;
+drop table 表名;
+select * from 表名; 显示记录
